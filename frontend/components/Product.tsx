@@ -15,12 +15,12 @@ const Product = ({ product, className, ...props }: Props) => {
           <img
             src={product.images[0].thumbnail}
             alt="Product image"
-            className='w-full h-52 object-cover object-center'
+            className='w-full h-60 md:h-64 object-cover object-center'
           />
           <h4 className='mt-2 font-bold text-xl truncate'>{product.title}</h4>
         </div>
 
-        <p className='font-inter text-gray-500 m-0'>Rs. {Comma(product.price)}</p>
+        <p className='font-inter font-light text-gray-500 m-0'>Rs. {Comma(product.price)}</p>
         {/* <p className='text-center font-inter text-gray-500 m-0'>Rating: {product.rating}</p> */}
       </Link>
     </div>
