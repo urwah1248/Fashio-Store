@@ -1,10 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { Button, useToast } from '@chakra-ui/react'
+import { useToast } from '@chakra-ui/react'
 import ImageGallery from 'react-image-gallery'
 import { AddToCartAction } from '@/store/actions/ProductActions'
 import { useAppDispatch } from '@/store'
 import { useTitle } from '@/context/titleContext';
 import { Radio } from 'antd';
+import {Button} from 'antd'
 import { Product } from '@/types/product'
 
 interface Props {
@@ -52,14 +53,6 @@ const ProductPage = ({ product, ...props }: Props) => {
     <div className='md:flex flex-row my-10 w-11/12 md:max-w-6xl mx-auto'>
 
       <div className="left md:w-3/5">
-        {/* <div className="hidden md:block">
-          <ImageGallery
-            items={product.images}
-            thumbnailPosition='left'
-            showNav={false}
-            showPlayButton={false}
-          />
-        </div> */}
         <div className={``}>
           <ImageGallery
             items={product.images}
@@ -67,14 +60,13 @@ const ProductPage = ({ product, ...props }: Props) => {
             thumbnailPosition='bottom'
             showNav={false}
             showPlayButton={false}
-            
           />
         </div>
       </div>
 
       <form onSubmit={handleSubmit}
       className="md:w-2/5 right md:px-10 flex flex-col justify-evenly min-h-[550px] md:max-h-[400px]">
-        <h1 className='md:text-4xl lg:text-5xl text-center font-extrabold leading-0'>{product.title}</h1>
+        <h1 className='md:text-4xl font-playfair lg:text-5xl text-center font-extrabold leading-0'>{product.title}</h1>
         <h4 className='font-normal'>{product.description}</h4>
         <h3 className='font-normal'>Rs. <span className="font-bold">{product.price}</span></h3>
 
@@ -84,7 +76,7 @@ const ProductPage = ({ product, ...props }: Props) => {
             {
               product.stock.map((size: any, index: number) => {
                 return (
-                  <Radio.Button onChange={(e:any) => {setSize(e.target.value); setQuantity(1);setActiveIndex(index)}} value={size.size}>{size.size}</Radio.Button>
+                  <Radio.Button key={size} onChange={(e:any) => {setSize(e.target.value); setQuantity(1);setActiveIndex(index)}} value={size.size}>{size.size}</Radio.Button>
                 )
               })
             }
@@ -117,7 +109,9 @@ function ToastExample({ product, ...props }: Props) {
   const toast = useToast()
   return (
     <Button
-      type='submit' colorScheme='green' className='w-full'
+      type='primary'
+      size='large'
+      className='w-full bg-black'
       onClick={() =>
         toast({
           title: 'Added to Cart.',

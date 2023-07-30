@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import "~react-image-gallery/styles/css/image-gallery.css";
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bellota:wght@300;400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,7 +11,7 @@
 
 @layer base {
   h1 {
-    @apply text-5xl font-noto font-black tracking-normal;
+    @apply text-5xl font-black tracking-normal;
   }
   h2 {
     @apply text-4xl font-noto font-extrabold;
@@ -20,7 +23,10 @@
     @apply text-lg font-noto font-extrabold;
   }
   .page-header {
-    @apply font-extrabold text-center text-5xl md:text-7xl mt-4 mb-2 md:my-4;
+    @apply font-playfair font-extrabold text-center text-5xl md:text-7xl mt-4 mb-2 md:my-4;
+  }
+  .icon{
+    @apply text-3xl text-gray-700 hover:text-black transition-[50ms] hover:-translate-y-1;
   }
 }
 
@@ -28,7 +34,7 @@ p {
   margin: 0 !important;
 }
 
-.image-gallery-image{
+.image-gallery-image {
   object-fit: cover !important;
   -o-object-fit: cover !important;
 }
@@ -68,6 +74,8 @@ p {
     transform: scaleX(1);
     transform-origin: bottom left;
   }
+
+  
 }
 
 table {

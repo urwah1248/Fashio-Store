@@ -10,8 +10,7 @@ export default function Contact() {
     <div className='w-11/12 mb-10 mx-auto py-10'>
       <h1 className='page-header'>Contact Us</h1>
       
-      <div>
-        <VStack className="justify-start items-start">
+      <div className="flex flex-col justify-center items-center gap-3">
           <h3 className="tracking-tight text-center">Contact us on any of our Social media accounts</h3>
           <Link target='blank' href="https://www.facebook.com/fashiodotpk">
             <Button colorScheme='facebook' className="w-48">
@@ -28,7 +27,6 @@ export default function Contact() {
               <FaWhatsapp /> +92 316 5955579
             </Button>
           </Link>
-        </VStack>
       </div>
     </div>
   )

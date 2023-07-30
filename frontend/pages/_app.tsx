@@ -8,6 +8,13 @@ import { Provider } from "react-redux";
 import { store, persistor } from "../store";
 import { PersistGate } from "redux-persist/integration/react";
 import { SessionProvider } from "next-auth/react"
+import { ConfigProvider } from "antd";
+
+const theme = {
+  token: {
+    colorPrimary: "#000000",
+  },
+}
 
 export default function App({
   Component, pageProps: { session, ...pageProps }, }: AppProps) {
@@ -26,7 +33,9 @@ export default function App({
           <PersistGate loading={null} persistor={persistor}>
             <ChakraProvider>
               <TitleProvider>
-                <Component {...pageProps} />
+                <ConfigProvider theme={theme}>
+                  <Component {...pageProps} />
+                </ConfigProvider>
               </TitleProvider>
             </ChakraProvider>
           </PersistGate>
@@ -41,7 +50,9 @@ export default function App({
           <ChakraProvider>
             <TitleProvider>
               <Layout>
-                <Component {...pageProps} />
+                <ConfigProvider theme={theme}>
+                  <Component {...pageProps} />
+                </ConfigProvider>
               </Layout>
             </TitleProvider>
           </ChakraProvider>

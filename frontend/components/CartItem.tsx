@@ -45,7 +45,7 @@ const CartItem = ({ product, className, cart, ...props }: Props) => {
               className="underline text-gray-700 hover:text-black"
               href={`/shop/product/${product._id}`}
             >
-              <h4 className="leading-tight w-full truncate text-base m-0">
+              <h4 className="font-semibold leading-tight w-full truncate text-base m-0">
                 {product.name}
               </h4>
             </Link>
@@ -68,7 +68,7 @@ function ToastButton({ product, ...props }: Props) {
   };
   return (
     <button
-      className="underline font-semibold cursor-pointer text-gray-600 hover:text-black"
+      className="underline uppercase font-semibold cursor-pointer text-gray-600 hover:text-black"
       onClick={() => {
         toast({
           title: "Removed from Cart",

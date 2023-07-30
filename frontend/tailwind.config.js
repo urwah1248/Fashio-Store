@@ -15,7 +15,10 @@ module.exports = {
           "Inter"
         ],
         noto: [
-          "Playfair Display", "serif"
+          "Noto Serif", "cursive"
+        ],
+        playfair: [
+          'Playfair Display', 'serif'
         ]
       },
     },
