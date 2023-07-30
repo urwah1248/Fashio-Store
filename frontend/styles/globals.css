@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+@import "~react-image-gallery/styles/css/image-gallery.css";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-5xl font-noto font-black tracking-normal;
+  }
+  h2 {
+    @apply text-4xl font-noto font-extrabold;
+  }
+  h3 {
+    @apply text-2xl font-noto font-extrabold;
+  }
+  h4 {
+    @apply text-lg font-noto font-extrabold;
+  }
+  .page-header {
+    @apply font-extrabold text-center text-5xl md:text-7xl mt-4 mb-2 md:my-4;
+  }
+}
+
+p {
+  margin: 0 !important;
+}
+
+.image-gallery-image{
+  object-fit: cover !important;
+  -o-object-fit: cover !important;
+}
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@media (min-width: 800px) {
+  .nav-item {
+    display: inline-block;
+    position: relative;
+    color: black;
+  }
+
+  .nav-item::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  .nav-item:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  margin: 0 auto;
+}
+
+td,
+th {
+  border: 1px solid #dddddd !important;
+  text-align: left;
+  padding: 8px;
+}
