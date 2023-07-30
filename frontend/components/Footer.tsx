@@ -10,7 +10,7 @@ const Footer = () => {
       <hr />
       <div
         id="links"
-        className="flex md:flex-row flex-col md:max-w-5xl md:mx-auto px-8 tracking-tighter py-4 gap-12"
+        className="flex md:flex-row flex-col md:max-w-[80%] md:mx-auto px-8 tracking-tighter py-4 gap-12 justify-between"
       >
         <div className="">
           <Image
@@ -42,14 +42,14 @@ const Footer = () => {
         </div>
         <div className="font-noto whitespace-nowrap">
           <h3 className="uppercase">Links</h3>
-          <ul className="underline">
-            <Link href="/">
+          <ul>
+            <Link href="/" className="hover:underline text-black md:no-underline underline">
               <li className="py-1">Home</li>
             </Link>
-            <Link href="/contact">
+            <Link href="/contact" className="hover:underline text-black md:no-underline underline">
               <li className="py-1">Contact</li>
             </Link>
-            <Link href="/returnpolicy">
+            <Link href="/returnpolicy" className="hover:underline text-black md:no-underline underline">
               <li className="py-1">Return Policy</li>
             </Link>
           </ul>

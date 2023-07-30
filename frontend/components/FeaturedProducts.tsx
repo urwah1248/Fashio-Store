@@ -32,7 +32,7 @@ const FeaturedProducts = ({
           .map((product, index) => {
             return (
               <Product
-                className=" w-5/6 max-w-[268px] md:w-[300px] md:mr-0"
+                className="w-5/6 md:w-1/3 md:min-w-[247px] lg:w-1/5 md:mr-0 md:px-4"
                 key={index}
                 product={product}
               />

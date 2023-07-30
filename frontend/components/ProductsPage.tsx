@@ -48,13 +48,13 @@ export default function ProductsPage({ title, category, ...props }: Props) {
   }
 
   return (
-    <div className="w-full max-w-md sm:max-w-2xl md:max-w-5xl mx-auto">
+    <div className="w-full">
       <h1 className="page-header">{title}</h1>
-      <div className="flex flex-wrap w-full mx-auto justify-center sm:justify-start">
+      <div className="flex flex-wrap w-11/12 mx-auto justify-center sm:justify-start">
         {products
           .filter((product: any) => product.category == category)
           .map((item: any) => {
-            return <Product className={"w-5/6 md:w-[33%]"} key={item._id} product={item} />;
+            return <Product className={"w-5/6 md:w-1/3 lg:w-1/4"} key={item._id} product={item} />;
           })}
       </div>
     </div>
