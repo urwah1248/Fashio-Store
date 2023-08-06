@@ -8,7 +8,7 @@ import { Button, Radio } from "antd";
 import { Product } from "@/types/product";
 
 interface Props {
-  product: Product;
+  product: any;
 }
 
 const ProductPage = ({ product }: Props) => {
