@@ -34,7 +34,7 @@ const ProductPage = ({ product }: Props) => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     addToCart(item);
-
+    console.log(item);
     // Reset form fields
     setSize(`${product.stock[0].size}`);
     setQuantity(1);
@@ -133,6 +133,7 @@ function ToastExample({ product, ...props }: ToastProps) {
   return (
     <Button
       type="primary"
+      htmlType="submit"
       size="large"
       className="w-full bg-black"
       onClick={() =>
