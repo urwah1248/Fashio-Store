@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import { Layout, Drawer } from "antd";
+import { Layout } from "antd";
 import Link from "next/link";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
@@ -11,7 +11,7 @@ import CartDrawer from "./CartDrawer";
 
 const { Header } = Layout;
 
-const DashboardHeader = () => {
+const Navbar = () => {
   const router = useRouter();
   const path = router.pathname.split("/")[router.pathname.split("/").length-1];
 
@@ -109,4 +109,4 @@ const DashboardHeader = () => {
   );
 };
 
-export default DashboardHeader;
+export default Navbar;

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Button, HStack, VStack } from "@chakra-ui/react";
+import { HStack } from "@chakra-ui/react";
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
@@ -10,7 +10,7 @@ const Footer = () => {
       <hr />
       <div
         id="links"
-        className="flex md:flex-row flex-col md:max-w-[80%] md:mx-auto px-8 tracking-tighter py-4 gap-12 justify-between"
+        className="flex md:flex-row flex-col md:max-w-5xl md:mx-auto px-8 tracking-tighter py-4 gap-12 justify-between"
       >
         <div className="">
           <Image
@@ -20,15 +20,15 @@ const Footer = () => {
             width={496}
             alt="asdasdg"
           />
-          <HStack className="justify-center">
+          <HStack justify="center" gap={4}>
             <Link target="blank" href="https://www.facebook.com/fashiodotpk">
-              <FaFacebook className="icon"/>
+              <FaFacebook className="icon hover:text-blue-900" />
             </Link>
             <Link target="blank" href="https://www.instagram.com/fashiodotpk/">
-              <FaInstagram className="icon"/>
+              <FaInstagram className="icon hover:text-pink-600" />
             </Link>
             <Link target="blank" href="https://wa.me/923165955579">
-              <FaWhatsapp className="icon"/>
+              <FaWhatsapp className="icon hover:text-green-500" />
             </Link>
           </HStack>
         </div>
@@ -43,13 +43,22 @@ const Footer = () => {
         <div className="font-noto whitespace-nowrap">
           <h3 className="uppercase">Links</h3>
           <ul>
-            <Link href="/" className="hover:underline text-black md:no-underline underline">
+            <Link
+              href="/"
+              className="hover:underline text-black md:no-underline underline"
+            >
               <li className="py-1">Home</li>
             </Link>
-            <Link href="/contact" className="hover:underline text-black md:no-underline underline">
+            <Link
+              href="/contact"
+              className="hover:underline text-black md:no-underline underline"
+            >
               <li className="py-1">Contact</li>
             </Link>
-            <Link href="/returnpolicy" className="hover:underline text-black md:no-underline underline">
+            <Link
+              href="/returnpolicy"
+              className="hover:underline text-black md:no-underline underline"
+            >
               <li className="py-1">Return Policy</li>
             </Link>
           </ul>

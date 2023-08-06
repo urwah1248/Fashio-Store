@@ -21,7 +21,3 @@ export type Product = {
     created_at: string;
     __v: number;
 };
-  
-  
-  
-  

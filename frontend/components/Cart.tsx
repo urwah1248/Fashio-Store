@@ -22,7 +22,7 @@ const Cart = () => {
             return <CartItem key={index} product={item} cart={true} />;
           })}
         {cartItems.length <= 0 && (
-          <div className="h-full flex flex-col justify-center">
+          <div className="h-full flex flex-col justify-center items-center">
             <ShoppingCartOutlined className="text-4xl font-light text-gray-400"/>
             <h4 className="font-inter uppercase font-light text-gray-400">
               Your Cart is Empty

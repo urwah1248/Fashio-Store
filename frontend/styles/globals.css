@@ -26,7 +26,10 @@
     @apply font-playfair font-extrabold text-center text-5xl md:text-7xl mt-4 mb-2 md:my-4;
   }
   .icon{
-    @apply text-3xl text-gray-700 hover:text-black transition-[50ms] hover:-translate-y-1;
+    @apply text-3xl text-black hover:text-black transition-[50ms];
+  }
+  :where(.css-dev-only-do-not-override-k7429z).ant-menu-light.ant-menu-horizontal >.ant-menu-item-selected::after, :where(.css-dev-only-do-not-override-k7429z).ant-menu-light>.ant-menu.ant-menu-horizontal >.ant-menu-item-selected::after, :where(.css-dev-only-do-not-override-k7429z).ant-menu-light.ant-menu-horizontal >.ant-menu-submenu-selected::after, :where(.css-dev-only-do-not-override-k7429z).ant-menu-light>.ant-menu.ant-menu-horizontal >.ant-menu-submenu-selected::after{
+    @apply bg-black;
   }
 }
 
@@ -34,10 +37,10 @@ p {
   margin: 0 !important;
 }
 
-.image-gallery-image {
+/* .image-gallery-image {
   object-fit: cover !important;
   -o-object-fit: cover !important;
-}
+} */
 
 /* For Webkit-based browsers (Chrome, Safari and Opera) */
 .scrollbar-hide::-webkit-scrollbar {
@@ -74,8 +77,6 @@ p {
     transform: scaleX(1);
     transform-origin: bottom left;
   }
-
-  
 }
 
 table {

@@ -9,11 +9,14 @@ const OrdersTable = () => {
   };
 
   const [ordersData, setOrdersData] = useState([]);
+  const [loading, setLoading] = useState(false)
   useEffect(() => {
+    setLoading(true)
     fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}orders`)
       .then((res) => res.json())
       .then((data) => {
         setOrdersData(data);
+        setLoading(false)
       });
   }, []);
 
@@ -31,7 +34,7 @@ const OrdersTable = () => {
     {
       title: "S. No.",
       key: "sno",
-      render: (item) => <>{1}</>,
+      render: (_, record, index) => <>{index + 1}</>,
     },
     {
       title: "Order Details",
@@ -92,7 +95,12 @@ const OrdersTable = () => {
 
   return (
     <div>
-      <Table dataSource={ordersData} columns={columns} />
+      <Table
+      scroll={{
+        x: 700,
+      }}
+      loading={loading}
+      dataSource={ordersData} columns={columns} />
     </div>
   );
 };

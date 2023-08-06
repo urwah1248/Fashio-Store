@@ -7,17 +7,20 @@ import { useRouter } from "next/router";
 import { Provider } from "react-redux";
 import { store, persistor } from "../store";
 import { PersistGate } from "redux-persist/integration/react";
-import { SessionProvider } from "next-auth/react"
-import { ConfigProvider } from "antd";
+import { SessionProvider } from "next-auth/react";
+import { ConfigProvider, App as AntApp } from "antd";
+import { Analytics } from "@vercel/analytics/react";
 
 const theme = {
   token: {
     colorPrimary: "#000000",
   },
-}
+};
 
 export default function App({
-  Component, pageProps: { session, ...pageProps }, }: AppProps) {
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppProps) {
   const router = useRouter();
 
   if (
@@ -35,6 +38,7 @@ export default function App({
               <TitleProvider>
                 <ConfigProvider theme={theme}>
                   <Component {...pageProps} />
+                  <Analytics />
                 </ConfigProvider>
               </TitleProvider>
             </ChakraProvider>
@@ -51,7 +55,9 @@ export default function App({
             <TitleProvider>
               <Layout>
                 <ConfigProvider theme={theme}>
-                  <Component {...pageProps} />
+                  <AntApp>
+                    <Component {...pageProps} />
+                  </AntApp>
                 </ConfigProvider>
               </Layout>
             </TitleProvider>
