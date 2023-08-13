@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app"
 import { getStorage } from "firebase/storage"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyByhd-qhPHbHoIejptryiV89924ghv2yAQ",
-  authDomain: "fashio-store.firebaseapp.com",
-  projectId: "fashio-store",
-  storageBucket: "fashio-store.appspot.com",
-  messagingSenderId: "210688360139",
-  appId: "1:210688360139:web:1938b3843df08873af654e",
-}
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+};
 
 const app = initializeApp(firebaseConfig)
 const storage = getStorage(app)
