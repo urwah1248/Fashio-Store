@@ -16,7 +16,7 @@ mongoose
     console.log(err);
   });
 
-const allowedOrigins = ["https://fashio-store.vercel.app"];
+const allowedOrigins = ["https://fashio-store-backend.vercel.app", "https://fashio-store.vercel.app"];
 
 app.use(
   cors({
