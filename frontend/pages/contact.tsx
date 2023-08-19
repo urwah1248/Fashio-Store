@@ -11,7 +11,7 @@ import {
 } from "@ant-design/icons";
 import { useTitle } from "@/context/titleContext";
 
-const imageUrl = `${process.env.NEXT_PUBLIC_URL}/contact.png`;
+// const imageUrl = `${process.env.NEXT_PUBLIC_URL}/contact.png`;
 export default function Contact() {
   const { changeTitle } = useTitle();
   const { message } = App.useApp();
@@ -27,7 +27,7 @@ export default function Contact() {
   return (
     <div className="mx-auto">
       <div
-        className={`bg-[url(${imageUrl})] py-16 md:py-24 bg-cover bg-center`}
+        className={`bg-[url('/contact.png')] py-16 md:py-24 bg-cover bg-center`}
       >
         <h1 className="page-header drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] outline-1 outline-black text-gray-50">
           Contact Us
