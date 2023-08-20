@@ -16,19 +16,9 @@ mongoose
     console.log(err);
   });
 
-const allowedOrigins = ["https://fashio-store-backend.vercel.app", "https://fashio-store.vercel.app"];
+// const allowedOrigins = ["https://fashio-store-backend.vercel.app", "https://fashio-store.vercel.app"];
 
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      if (allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-  })
-);
+app.use(cors()); //Allowing for all origins
 
 app.use(express.json());
 app.use("/api", router);
