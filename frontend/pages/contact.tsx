@@ -1,7 +1,6 @@
-import { Button, App } from "antd";
+import { Button, App, Typography } from "antd";
 import React, { useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {
   FacebookFilled,
   InstagramOutlined,
@@ -15,6 +14,7 @@ import { useTitle } from "@/context/titleContext";
 export default function Contact() {
   const { changeTitle } = useTitle();
   const { message } = App.useApp();
+  const { Paragraph } = Typography;
 
   const copyToClipboard = (content: string) => {
     navigator.clipboard.writeText(content);
@@ -34,12 +34,12 @@ export default function Contact() {
         </h1>
       </div>
       <div className="w-11/12 mx-auto max-w-4xl mt-4 flex flex-col gap-4 sm:text-lg">
-        <p>
+        <Paragraph className="text-center">
           We love hearing from you! Whether you have a question, a comment, or a
           special request, we are here to help.
-        </p>
+        </Paragraph>
         <div className="text-center">
-          <p className="mb-2">
+          <Paragraph className="mb-2">
             You can reach us by phone or Whatsapp at{" "}
             <span
               className="font-semibold whitespace-nowrap hover:underline hover:cursor-pointer"
@@ -50,11 +50,10 @@ export default function Contact() {
               +92 316 5955579
             </span>
             .
-          </p>
+          </Paragraph>
           <div className="flex gap-2 sm:flex-row flex-col justify-center">
             <Link href="tel:+923165955579">
               <Button
-                size="large"
                 type="primary"
                 className="bg-blue-500 hover:bg-blue-400 shadow-none w-full"
                 icon={<PhoneOutlined />}
@@ -64,7 +63,6 @@ export default function Contact() {
             </Link>
             <Link target="blank" href="https://wa.me/923165955579">
               <Button
-                size="large"
                 type="primary"
                 className="bg-green-600 hover:bg-green-500 shadow-none w-full"
                 icon={<WhatsAppOutlined />}
@@ -75,7 +73,7 @@ export default function Contact() {
           </div>
         </div>
         <div className="text-center">
-          <p className="mb-2">
+          <Paragraph className="mb-2">
             You can also reach us by email at{" "}
             <span
               className="font-semibold whitespace-nowrap hover:underline hover:cursor-pointer"
@@ -86,10 +84,9 @@ export default function Contact() {
               contact@fashio.pk
             </span>
             .
-          </p>
+          </Paragraph>
           <Link href="mailto:contact@fashio.pk">
             <Button
-              size="large"
               type="primary"
               className="bg-red-500 hover:bg-red-400 shadow-none w-full sm:w-28"
               icon={<MailOutlined />}
@@ -99,14 +96,13 @@ export default function Contact() {
           </Link>
         </div>
         <div className="text-center">
-          <p className="mb-2">
+          <Paragraph className="mb-2">
             You can also follow us on Facebook and Instagram to see our latest
             collections, promotions, and events.
-          </p>
+          </Paragraph>
           <div className="flex gap-2 sm:flex-row flex-col justify-center">
             <Link target="blank" href="https://www.facebook.com/fashiodotpk">
               <Button
-                size="large"
                 type="primary"
                 className="bg-blue-900 hover:bg-blue-800 shadow-none w-full"
                 icon={<FacebookFilled />}
@@ -116,7 +112,6 @@ export default function Contact() {
             </Link>
             <Link target="blank" href="https://www.instagram.com/fashiodotpk/">
               <Button
-                size="large"
                 type="primary"
                 className="bg-pink-700 hover:bg-pink-600 shadow-none w-full"
                 icon={<InstagramOutlined />}

@@ -15,6 +15,12 @@ const theme = {
   token: {
     colorPrimary: "#000000",
   },
+  components: {
+    App: {
+      fontFamily:
+        "-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+    },
+  },
 };
 
 export default function App({

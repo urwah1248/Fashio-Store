@@ -135,7 +135,7 @@ function ToastExample({ product, ...props }: ToastProps) {
       type="primary"
       htmlType="submit"
       size="large"
-      className="w-full bg-black"
+      className="w-full bg-black hover:drop-shadow-xl"
       onClick={() =>
         toast({
           title: "Added to Cart.",
