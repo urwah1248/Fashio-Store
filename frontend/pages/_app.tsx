@@ -29,43 +29,37 @@ export default function App({
 }: AppProps) {
   const router = useRouter();
 
-  if (
-    router.pathname === "/shop/checkout" ||
-    router.pathname === "/admin/login" ||
-    router.pathname === "/admin/dashboard" ||
-    router.pathname === "/admin/products" ||
-    router.pathname === "/admin/product/add"
-  )
-    return (
-      <SessionProvider session={session}>
-        <Provider store={store}>
-          <PersistGate loading={null} persistor={persistor}>
-            <ChakraProvider>
-              <TitleProvider>
-                <ConfigProvider theme={theme}>
-                  <Component {...pageProps} />
-                  <Analytics />
-                </ConfigProvider>
-              </TitleProvider>
-            </ChakraProvider>
-          </PersistGate>
-        </Provider>
-      </SessionProvider>
-    );
-
+  const noLayoutPaths = [
+    "/shop/checkout",
+    "/admin/login",
+    "/admin/dashboard",
+    "/admin/products",
+    "/admin/product/add",
+  ];
+  
   return (
     <SessionProvider session={session}>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <ChakraProvider>
             <TitleProvider>
-              <Layout>
+              {noLayoutPaths.includes(router.pathname) ? (
                 <ConfigProvider theme={theme}>
                   <AntApp>
                     <Component {...pageProps} />
+                    <Analytics />
                   </AntApp>
                 </ConfigProvider>
-              </Layout>
+              ) : (
+                <Layout>
+                  <ConfigProvider theme={theme}>
+                    <AntApp>
+                      <Component {...pageProps} />
+                      <Analytics />
+                    </AntApp>
+                  </ConfigProvider>
+                </Layout>
+              )}
             </TitleProvider>
           </ChakraProvider>
         </PersistGate>

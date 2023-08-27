@@ -78,17 +78,3 @@ p {
     transform-origin: bottom left;
   }
 }
-
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 90%;
-  margin: 0 auto;
-}
-
-td,
-th {
-  border: 1px solid #dddddd !important;
-  text-align: left;
-  padding: 8px;
-}

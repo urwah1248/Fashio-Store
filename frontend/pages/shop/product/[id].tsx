@@ -32,7 +32,6 @@ export const getStaticProps = async ( { params }:Params ) => {
       product
     }
   }
-  
 }
 
 export async function getStaticPaths() {
